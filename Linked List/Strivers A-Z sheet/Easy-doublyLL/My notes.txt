@@ -1,0 +1,4 @@
+*** Remember to check for edge cases as in case of DLL can give null pointer exception when inserting or deleting
+
+Reversing a DLL
+*** In this case we must do temp=temp.prev to traverse the linked list as we are swapping the next and prev pointers of each node to reverse the list hence, what usually would be temp.next due to swapping and reversing is now temp.prev

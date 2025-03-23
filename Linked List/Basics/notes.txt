@@ -1,0 +1,1 @@
+Always make temp variables for any nodes pertaining to the linked list as the actual address of the node should not get altered or lost. Will result in loss of linked list.

@@ -1,0 +1,57 @@
+Given a doubly linked list. Your task is to reverse the doubly linked list and return its head.
+
+Examples:
+
+Input: LinkedList: 3 <-> 4 <-> 5
+Output: 5 <-> 4 <-> 3
+
+Input: LinkedList: 75 <-> 122 <-> 59 <-> 196
+Output: 196 <-> 59 <-> 122 <-> 75
+
+Expected Time Complexity: O(n).
+Expected Auxiliary Space: O(1).
+
+Constraints:
+1 <= number of nodes <= 106
+0 <= node->data <= 104
+
+
+Code:
+
+
+/*
+class DLLNode {
+    int data;
+    DLLNode next;
+    DLLNode prev;
+
+    DLLNode(int val) {
+        data = val;
+        next = null;
+        prev = null;
+    }
+}
+*/
+class Solution {
+    public DLLNode reverseDLL(DLLNode head) {
+        
+        DLLNode temp =head;
+        DLLNode newHead=null;
+        while(temp!=null)
+        {
+            DLLNode temp1;
+            temp1=temp.next;
+            temp.next=temp.prev;
+            temp.prev=temp1;
+                
+            newHead=temp;
+            temp=temp.prev;
+            
+        }
+        
+        return newHead;
+    }
+}
+
+
+*** In this case we must do temp=temp.prev to traverse the linked list as we are swapping the next and prev pointers of each node to reverse the list hence, what usually would be temp.next due to swapping and reversing is now temp.prev
